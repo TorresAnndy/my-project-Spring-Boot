@@ -8,6 +8,11 @@
 - Tener instalado el JDK
 - Tener instalado GIT (tambien una cuenta creada en github)
 
+## Conexion a Postgres
+ - ip: 127.0.0.1
+ - spring.datasource.url=jdbc:postgresql://localhost:5432/midatabase
+ - spring.datasource.username=admin
+ - spring.datasource.password=admin
 
 ## Pasos para Clonar y Ejecutar el Proyecto
 

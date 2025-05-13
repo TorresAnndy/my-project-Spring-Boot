@@ -1,34 +1,33 @@
 package com.my_project.my_project.model;
 
-
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-//la persistencia es una clase ligera que persiste a una tabla en una bdd relacional
 @Entity
 @Getter @Setter @NoArgsConstructor @AllArgsConstructor
-@Table(name="BOOK_TABLE")
+@Table(name="book")
 public class Book {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name="BOOK_ID")
+    private long bookId;
 
-    @Column(name ="BOOD_ID")
-    public long bokId;
-    @Column(name="BOOD_TITLE")
-    public String title;
-    @Column(name="BOOD_AUTHOR")
-    public String author;
-    @Column(name="BOOD_PUBLISHED_YEAR")
-    public String publishedYear;
+    @Column(name="BOOK_TITLE")
+    private String title;
 
+    @Column(name="BOOK_AUTHOR")
+    private String author;
 
+    @Column(name="BOOK_PUBLISHED_YEAR")
+    private Integer publishedYear;
+
+    @Column(name="BOOK_ISBN")
+    private String isbn;
+
+    @Column(name="BOOK_PAGE")
+    private String page;
 }
