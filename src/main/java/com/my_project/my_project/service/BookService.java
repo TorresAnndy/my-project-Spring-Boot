@@ -14,42 +14,38 @@ public class BookService {
 	@Autowired
 	BookRepository bookRepository;
 	
-	//obtener todos los libros
+	// Obtener todos los libros
 	public Iterable<Book> getAllBooks(){
-		Iterable<Book> books= bookRepository.findAll();
-		return books;
+		return bookRepository.findAll();
 	}
 	
-	//crear
+	// Crear libro
 	public Book createBook(Book book) {
-		Book bookCreated = bookRepository.save(book);
-		return bookCreated;
+		return bookRepository.save(book);
 	}
 	
-	//buscar por Title
+	// Buscar por título
 	public Optional<Book> findBookByTitle(String title){
 		return bookRepository.findBookByTitle(title);
 	}
-	//buscar por Id
-	public Optional<Book> findBookById(Long id){
+	
+	// Buscar por ID (ajustado a String)
+	public Optional<Book> findBookById(String id){
 		return bookRepository.findById(id);
 	}
 	
-	//borrar por title
-	public Book deleteBookByTitle(String title){
-		Optional<Book> deleteBook= bookRepository.deleteBookByTitle(title);
-		return null;
+	// Borrar por título
+	public Optional<Book> deleteBookByTitle(String title){
+		return bookRepository.deleteBookByTitle(title);
 	}
 	
-	//acrtualizar
+	// Actualizar libro
 	public Book updateBook(Book book) {
 		return bookRepository.save(book);
 	}
 	
-	//borrar
+	// Borrar libro
 	public void deleteBook(Book book) {
 		bookRepository.delete(book);
 	}
-	
-
 }
