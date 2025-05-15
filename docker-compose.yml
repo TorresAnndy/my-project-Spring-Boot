@@ -7,8 +7,6 @@ services:
     ports:
       - "27017:27017"
     environment:
-      MONGO_INITDB_ROOT_USERNAME: admin       # Usuario para autenticación
-      MONGO_INITDB_ROOT_PASSWORD: admin   # Contraseña para autenticación
       MONGO_INITDB_DATABASE: mongo            # Nombre de la base de datos
     volumes:
       - mongo-data:/data/db
