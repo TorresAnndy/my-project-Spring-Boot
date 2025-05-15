@@ -1,20 +1,16 @@
 package com.my_project.my_project.model;
 
-import org.springframework.data.mongodb.core.mapping.Document;
+import java.io.Serializable;
 
-import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Document(collection = "book")
 @Getter @Setter @NoArgsConstructor @AllArgsConstructor
-public class Book {
+public class Book implements Serializable {
 
-    @Id
-    private String id;
-
+    private String bookId;
     private String title;
     private String author;
     private Integer publishedYear;
