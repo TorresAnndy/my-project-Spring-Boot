@@ -12,7 +12,7 @@ import lombok.Setter;
 public class Book {
 
     @Id
-    private String bookId;  // Mejor String para las claves en Redis
+    private String bookId; 
 
     private String title;
     private String author;
