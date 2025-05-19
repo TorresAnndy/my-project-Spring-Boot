@@ -1,28 +1,19 @@
 package com.my_project.my_project.model;
 
-import java.io.Serializable;
-
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.redis.core.RedisHash;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Entity
-@Getter
-@Setter
-@NoArgsConstructor
-@AllArgsConstructor
-@Table(name="book")
-public class Book implements Serializable {
+@RedisHash("Book")
+@Getter @Setter @NoArgsConstructor @AllArgsConstructor
+public class Book {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long bookId;
+    private String bookId;  // Mejor String para las claves en Redis
+
     private String title;
     private String author;
     private Integer publishedYear;

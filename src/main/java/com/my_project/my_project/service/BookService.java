@@ -10,46 +10,43 @@ import com.my_project.my_project.repository.BookRepository;
 
 @Service
 public class BookService {
-	
-	@Autowired
-	BookRepository bookRepository;
-	
-	//obtener todos los libros
-	public Iterable<Book> getAllBooks(){
-		Iterable<Book> books= bookRepository.findAll();
-		return books;
-	}
-	
-	//crear
-	public Book createBook(Book book) {
-		Book bookCreated = bookRepository.save(book);
-		return bookCreated;
-	}
-	
-	//buscar por Title
-	public Optional<Book> findBookByTitle(String title){
-		return bookRepository.findBookByTitle(title);
-	}
-	//buscar por Id
-	public Optional<Book> findBookById(Long id){
-		return bookRepository.findById(id);
-	}
-	
-	//borrar por title
-	public Book deleteBookByTitle(String title){
-		Optional<Book> deleteBook= bookRepository.deleteBookByTitle(title);
-		return null;
-	}
-	
-	//acrtualizar
-	public Book updateBook(Book book) {
-		return bookRepository.save(book);
-	}
-	
-	//borrar
-	public void deleteBook(Book book) {
-		bookRepository.delete(book);
-	}
-	
-
+    
+    @Autowired
+    BookRepository bookRepository;
+    
+    // obtener todos los libros
+    public Iterable<Book> getAllBooks(){
+        return bookRepository.findAll();
+    }
+    
+    // crear
+    public Book createBook(Book book) {
+        return bookRepository.save(book);
+    }
+    
+    // buscar por Title
+    public Optional<Book> findBookByTitle(String title){
+        return bookRepository.findBookByTitle(title);
+    }
+    
+    // buscar por Id
+    public Optional<Book> findBookById(String id){
+        return bookRepository.findById(id);
+    }
+    
+    // borrar por title
+    public void deleteBookByTitle(String title){
+        Optional<Book> deleteBook = bookRepository.findBookByTitle(title);
+        deleteBook.ifPresent(bookRepository::delete);
+    }
+    
+    // actualizar
+    public Book updateBook(Book book) {
+        return bookRepository.save(book);
+    }
+    
+    // borrar
+    public void deleteBook(Book book) {
+        bookRepository.delete(book);
+    }
 }
