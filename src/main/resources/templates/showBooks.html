@@ -1,32 +1,95 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
 <head>
+    <meta charset="UTF-8">
     <title>Lista de Libros</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+        }
+
+        .info {
+            margin-bottom: 30px;
+            background-color: #ecf0f1;
+            padding: 15px;
+            border-radius: 10px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .table-container {
+            width: 90%;
+            margin: auto;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            overflow-x: auto; /* para scroll horizontal si es necesario */
+            background-color: #ffffff;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        thead {
+            background-color: #3498db;
+            color: white;
+        }
+
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        tbody tr:hover {
+            background-color: #d0e7f9;
+        }
+    </style>
 </head>
 <body>
-    <h1>Libros en la Biblioteca</h1>
-    <p>Nombre: <span th:text="${Name}"></span></p>
-    <p>Dirección: <span th:text="${Direccion}"></span></p>
 
-    <table border="1">
-        <thead>
-            <tr>
-                <th>Título</th>
-                <th>Autor</th>
-                <th>Año</th>
-                <th>ISBN</th>
-                <th>Páginas</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr th:each="book : ${books}">
-                <td th:text="${book.title}"></td>
-                <td th:text="${book.author}"></td>
-                <td th:text="${book.publishedYear}"></td>
-                <td th:text="${book.isbn}"></td>
-                <td th:text="${book.page}"></td>
-            </tr>
-        </tbody>
-    </table>
+    <h1>Libros en la Biblioteca</h1>
+
+    <div class="info">
+        <p><strong>Nombre:</strong> <span th:text="${Name}"></span></p>
+        <p><strong>Dirección:</strong> <span th:text="${Direccion}"></span></p>
+    </div>
+
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Título</th>
+                    <th>Autor</th>
+                    <th>Año</th>
+                    <th>ISBN</th>
+                    <th>Páginas</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="book : ${books}">
+                    <td th:text="${book.title}">Título</td>
+                    <td th:text="${book.author}">Autor</td>
+                    <td th:text="${book.publishedYear}">Año</td>
+                    <td th:text="${book.isbn}">ISBN</td>
+                    <td th:text="${book.page}">Páginas</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
 </body>
 </html>
