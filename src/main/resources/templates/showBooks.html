@@ -11,6 +11,7 @@
     <table border="1">
         <thead>
             <tr>
+                <th>Id</th>
                 <th>Título</th>
                 <th>Autor</th>
                 <th>Año</th>
@@ -20,6 +21,7 @@
         </thead>
         <tbody>
             <tr th:each="book : ${books}">
+                <td th:text="${book.id}"></td>
                 <td th:text="${book.title}"></td>
                 <td th:text="${book.author}"></td>
                 <td th:text="${book.publishedYear}"></td>

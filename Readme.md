@@ -8,11 +8,10 @@
 - Tener instalado el JDK
 - Tener instalado GIT (tambien una cuenta creada en github)
 
-## Conexion a Postgres
+## Conexion a Mongodb
  - ip: 127.0.0.1
- - spring.datasource.url=jdbc:postgresql://localhost:5432/midatabase
- - spring.datasource.username=admin
- - spring.datasource.password=admin
+ - spring.data.mongodb.uri=mongodb://127.0.0.1:27017/mongo
+ - spring.data.mongodb.database=mongo
 
 ## Pasos para Clonar y Ejecutar el Proyecto
 
