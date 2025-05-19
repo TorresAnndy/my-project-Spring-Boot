@@ -9,10 +9,8 @@
 - Tener instalado GIT (tambien una cuenta creada en github)
 
 ## Conexion a Postgres
- - ip: 127.0.0.1
- - spring.datasource.url=jdbc:postgresql://localhost:5432/midatabase
- - spring.datasource.username=admin
- - spring.datasource.password=admin
+ - spring.data.redis.host=localhost
+ - spring.data.redis.port=6379
 
 ## Pasos para Clonar y Ejecutar el Proyecto
 
