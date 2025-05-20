@@ -1,6 +1,6 @@
 # Inicio Spring Boot
 
-¡Bienvenido a **MI Pagina**! en este proyecto estoy inciando con desarrollo frontend, en mi materia de DBP en mi cuarto semestre de IT.
+¡Bienvenido a **MI Pagina**! en este proyecto estoy inciando con desarrollo frontend, en mi materia de DBP en mi quinto semestre de IT.
 
 ## Requisitos Previos
 
